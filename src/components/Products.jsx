@@ -13,7 +13,6 @@ const Products = () => {
       url: "https://fakestoreapi.com/products/",
     })
       .then((res) => {
-        console.log(res.data);
         setData(res.data);
       })
       .catch((e) => console.log(e))
@@ -35,11 +34,11 @@ const Products = () => {
               <img src={product.image} alt="#" />
             </div>
             <div className="card-description">
-              <h6>
+              <h3>
                 <Link to={`/product/${product.id}`}>{product.title}</Link>
-              </h6>
-              <h6>{`Price: ${product.price} `}</h6>
-              <h6>{`Category: ${product.category}`}</h6>
+              </h3>
+              <h4>{`Price: $${product.price} `}</h4>
+              <h5>{`Category: ${product.category}`}</h5>
             </div>
           </div>
         ))}
